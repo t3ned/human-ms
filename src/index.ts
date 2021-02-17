@@ -1,2 +1,1 @@
-export * from "./functions/humanToMs";
-export * from "./functions/msToHuman";
+export * from "./functions/parseMS";
