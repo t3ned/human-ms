@@ -1,7 +1,7 @@
 {
   "name": "human-ms",
   "version": "0.0.1",
-  "description": "A time converter for translating ms to human text, vice versa.",
+  "description": "A time converter for translating ms to human text, and vice versa.",
   "main": "dist/index.js",
   "repository": "https://github.com/T3NED/human-ms-v2.git",
   "author": "T3NED <software@t3ned.com>",
