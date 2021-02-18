@@ -1,30 +1,4 @@
-// Time units converted to milliseconds
-const timeInMS = {
-  year: 1000 * 60 * 60 * 24 * 365.25, // 31557600000
-  week: 1000 * 60 * 60 * 24 * 7, // 604800000
-  day: 1000 * 60 * 60 * 24, // 86400000
-  hour: 1000 * 60 * 60, // 3600000
-  minute: 1000 * 60, // 60000
-  second: 1000
-};
-
-// Mapped long unit to short unit
-const longToShortUnit = new Map([
-  ["year", "y"],
-  ["week", "w"],
-  ["day", "d"],
-  ["hour", "h"],
-  ["day", "d"],
-  ["minute", "m"],
-  ["second", "s"]
-]);
-
-// Default options for undefined options
-const defaultParseMSOptions: ParseMSOptions = {
-  // Default joinWith option is used based on other options
-  short: false,
-  replaceLastCommaWithAnd: true
-};
+import { defaultParseMSOptions, timeInMS, longToShortUnit } from "../constants";
 
 /**
  * Converts milliseconds into human-readable text
@@ -72,6 +46,7 @@ function pluralize(count: number) {
  * @param joinWith
  */
 function replaceLastComma(text: string, joinWith: string) {
+  // Only replace the last comma if the times are joined with commas
   if (joinWith !== ",") return text;
   const regex = /,\s([^,]+)$/;
   return text.replace(regex, " and $1");
